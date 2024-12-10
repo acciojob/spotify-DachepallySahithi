@@ -87,7 +87,6 @@ public class SpotifyRepository {
         return song;
     }
 
-
     public Playlist createPlaylistOnLength(String mobile, String title, int length) throws Exception {
         User user = new User();
         boolean b = false;
@@ -169,7 +168,7 @@ public class SpotifyRepository {
         }
         if (!b1) throw new Exception("User does not exist");
         Playlist playlist = null;
-        playlist = new Playlist();
+        Playlist playlist1 = new Playlist();
         for (Playlist p : playlists){
             if (p.getTitle().equals(playlistTitle)){
                 playlist=p;
