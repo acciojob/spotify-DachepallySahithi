@@ -53,7 +53,7 @@ public class SpotifyRepository {
         boolean b = false;
         Artist artist = new Artist();
         for (Artist a : artists){
-            if(a.getName().equals(artistName)) {artist=a; b=true; break;}
+            if(a.getName().equals(artistName)) {artist = a; b=true; break;}
         }
         if(!b) artist = createArtist(artistName);
         Album album = new Album(title);
@@ -137,15 +137,13 @@ public class SpotifyRepository {
         playlistListenerMap.put(playlist, list2);
         for (Song song : songs){
             if (songTitles.contains(song.getTitle())){
-                if (playlistSongMap.containsKey(playlist))
-                    playlistSongMap.get(playlist).add(song);
+                if (playlistSongMap.containsKey(playlist)) playlistSongMap.get(playlist).add(song);
                 else {
-                    List<Song> list = new ArrayList<Song>();
+                    List<Song> list = new ArrayList<>();
                     list.add(song);
                     playlistSongMap.put(playlist, list);
                 }
-                if (userPlaylistMap.containsKey(user))
-                    userPlaylistMap.get(user).add(playlist);
+                if (userPlaylistMap.containsKey(user)) userPlaylistMap.get(user).add(playlist);
                 else {
                     List<Playlist> list3 = new ArrayList<>();
                     list3.add(playlist);
@@ -167,8 +165,7 @@ public class SpotifyRepository {
             }
         }
         if (!b1) throw new Exception("User does not exist");
-        Playlist playlist = null;
-        playlist = new Playlist();
+        Playlist playlist = new Playlist();
         for (Playlist p : playlists){
             if (p.getTitle().equals(playlistTitle)){
                 playlist=p;
@@ -212,6 +209,7 @@ public class SpotifyRepository {
                         songLikeMap.get(song).add(user);
                     }
                 }
+                //Getting Album of the Song
                 Album a = null;
                 for(Album album : albumSongMap.keySet()){
                     if(albumSongMap.get(album).contains(s)){
@@ -219,6 +217,7 @@ public class SpotifyRepository {
                         break;
                     }
                 }
+                //Getting Artist of the Song
                 Artist art;
                 for(Artist artist : artistAlbumMap.keySet()){
                     if(artistAlbumMap.get(artist).contains(a)){
@@ -244,7 +243,6 @@ public class SpotifyRepository {
         }
         return artist.getName();
     }
-
 
     public String mostPopularSong() {
         Song song = new Song();
