@@ -7,9 +7,7 @@ public class Album {
     private String title;
     private Date releaseDate;
 
-    public Album(){
-
-    }
+    public Album(){}
 
     public Album(String title){
         this.title = title;
