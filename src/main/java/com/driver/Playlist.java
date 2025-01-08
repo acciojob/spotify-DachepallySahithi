@@ -9,18 +9,9 @@ public class Playlist {
 
     }
 
-    public Playlist(String title){
+    public Playlist(String title){ this.title = title; }
 
-        this.title = title;
-    }
+    public String getTitle() { return title; }
 
-    public String getTitle() {
-
-        return title;
-    }
-
-    public void setTitle(String title) {
-
-        this.title = title;
-    }
+    public void setTitle(String title) {this.title = title;}
 }

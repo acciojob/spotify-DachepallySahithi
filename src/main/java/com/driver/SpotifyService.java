@@ -9,7 +9,7 @@ public class SpotifyService {
 
     //Auto-wire will not work in this case, no need to change this and add autowire
 
-    SpotifyRepository spotifyRepository;
+    SpotifyRepository spotifyRepository=new SpotifyRepository();
 
     public User createUser(String name, String mobile){
         return spotifyRepository.createUser(name, mobile);
@@ -44,12 +44,10 @@ public class SpotifyService {
     }
 
     public String mostPopularArtist() {
-
         return spotifyRepository.mostPopularArtist();
     }
 
     public String mostPopularSong() {
-
         return spotifyRepository.mostPopularSong();
     }
 }
