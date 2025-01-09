@@ -40,14 +40,14 @@ public class SpotifyRepository {
     public User createUser(String name, String mobile) {
         User user = new User(name, mobile);
         users.add(user);
-//        userPlaylistMap.put(user, new ArrayList<>());
+        userPlaylistMap.put(user, new ArrayList<>());
         return user;
     }
 
     public Artist createArtist(String name) {
         Artist artist = new Artist(name);
         artists.add(artist);
-//        artistAlbumMap.put(artist, new ArrayList<>());
+        artistAlbumMap.put(artist, new ArrayList<>());
         return artist;
     }
 
