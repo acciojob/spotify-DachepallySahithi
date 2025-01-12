@@ -6,7 +6,9 @@ public class Artist {
     private String name;
     private int likes;
 
-    public Artist(){}
+    public Artist(){
+
+    }
 
     public Artist(String name){
         this.name = name;
